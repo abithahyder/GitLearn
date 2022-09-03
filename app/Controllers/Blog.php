@@ -3,7 +3,7 @@ namespace App\Controllers;
 use \CodeIgniter\Controller;
 use \CodeIgniter\View\Table;
 class Blog extends BaseController{
-    public function index(){
+    public function indexx(){
         $data = [
             'page_title' => 'Codelginiter',
             'Content' => 'The content on the page',
@@ -47,6 +47,19 @@ public function vfiltr(){
     $parser->render('filterview');
    // return view('blog/filterview',$data);
 }
-   
+   public function index(){
+    helper(['form','cookie','html','array']);
+    //helper('form');
+    //helper('html');
+   // helper('cookie');
+
+//     echo form_open();
+//     echo form_input("username","test123");
+// echo base_url();
+// echo current_url();
+
+echo getRandom([10,20,30,40,50,60]);
+   }
+
 }
 ?>

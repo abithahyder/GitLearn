@@ -4,12 +4,19 @@ use App\Models\BookModel;
 
 class Book extends BaseController{
     public function index(){
+        echo view('book\header');
+     echo view('book/main');
+     echo view('book/footer');
+    }
+    public function indexx(){
         $session = \Config\Services::session();
         $data['session'] = $session;
         $model = new BookModel();
         $booksarray=$model->getRecords();
         $data['books'] = $booksarray;
-        return view('book/list',$data);
+         echo view('book/header');
+          echo view('book/list',$data);
+          echo view('book/footer');
     }
     public function create(){
         $session = \Config\Services::session();
